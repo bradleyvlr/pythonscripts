@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+dat = open("data")
+lin = dat.readlines()
+answers = []
+for l in lin:
+    l = l.replace("\n", "")
+    l = l.split(" ")
+    lA = l[:4]
+    lB = l[4:]
+    lC = [0,0,0,0]
+    default = [0,24,60,60]
+    for x in range(3,-1,-1):
+        tmp = int(lB[x])-int(lA[x])
+        if tmp < 0:
+            tmp += default[x]
+            lB[x-1] = int(lB[x-1]) - 1
+        
+        lC[x]=str(tmp)
+    st = " ".join(lC)
+    answers.append(st)
+for a in answers:
+    print("(" + a + ")", end = " ")
+print('')
