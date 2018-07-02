@@ -7,9 +7,9 @@ if len(data)%2==0:
     exit(0)
 else:
     answers = []
-    for i in range(2,int(1+len(data)/2),2):
-        for j in range(1,int(1+len(data)/2),2):
-            answers.append(data[i]+data[j])
+    for i in range(2,len(data),2):
+            answers.append(int(data[i])+int(data[i-1]))
 for a in answers:
     print(a,end=" ")
+print('')
             
